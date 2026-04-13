@@ -1,0 +1,1036 @@
+@charset "utf-8";
+
+
+/* 共通CSS */
+
+body {
+  font-family: "Zen Maru Gothic", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+}
+
+  body #header h1 img {
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+body .title-img {
+  width: 100%;
+  overflow: hidden;
+}
+
+body .title-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+body #main-container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+body section {
+  padding: 80px 20px;
+}
+
+body section p {
+  line-height: 40px;
+}
+
+body section .section-intro {
+  text-align: center;
+}
+
+body h2 {
+  font-size: 45px;
+  text-align: center;
+}
+
+body h3 {
+  font-size: 30px;
+}
+
+body .title-bg {
+  display: block;
+  text-align: center;
+}
+
+body header #header {
+  display: flex;
+}
+
+body main .btn {
+  display: inline-block;
+  background-color: #F7AD02;
+  border: #F7AD02 solid 1px;
+  border-radius: 50px;
+  font-size: 23px;
+}
+
+body main .btn a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 30px 80px;
+}
+
+body main .btn:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+body .btn-center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+/* -----ヘッダー＞ナビ----- */
+
+
+header nav {
+  width: 100%;
+  background-color: #F9F9F9;
+  justify-content: space-between;
+}
+
+header nav ul {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+header nav ul li {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+header nav ul li a {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: #333;
+  align-content: center;
+  transition: background-color 0.3s ease, color 0.5s ease;
+}
+
+header nav ul li a:hover {
+  color: #fff;
+  background-color: #F7AD02;
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+/* ----- ふくらしゃのこと ----- */
+
+body main #about {
+  background-color: #FFF8EA;
+}
+
+body main #about .about-hukurasha {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  /* コンテンツの最大幅を指定すると綺麗です */
+  margin: 0 auto;
+  padding: 0 20px;
+
+}
+
+body main #about .about-hukurasha img {
+  width: 45%;
+  /* 親要素に対する比率 */
+  height: auto;
+  /* 比率を維持 */
+  object-fit: cover;
+  /* 万が一サイズが固定されても歪まないように */
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+body main #about .company-txt {
+  width: 50%;
+  margin-left: 30px;
+  padding: 30px 0 30px 0;
+
+}
+
+body main #about .company-txt p {
+  font-size: 23px;
+  padding: 30px 0 30px 0;
+}
+
+
+/* ----- サービスについて ----- */
+
+
+#service .works-container {
+  display: grid;
+  /* 画面幅に合わせて、最小300pxのカードを自動で並べる（PCなら4列、タブレットなら2列） */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  /* カード同士の隙間を均一に */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+#service .work-card {
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+#service .work-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+#service .work-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  /* ：画像の比率を4:3で統一してサイズを揃える */
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+#service .work-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#service .work-card p {
+  line-height: 1.6;
+}
+
+
+/* -----ご利用の流れ----- */
+body #flow {
+  background-color: rgba(255, 237, 197, 0.3);
+  ;
+}
+
+body #flow ol li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body #flow .flow-txt {
+  width: 80%;
+}
+
+body #flow .flow-txt h3 {
+  padding: 5px 0;
+}
+
+body #flow .flow-txt span {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: #F7AD02 solid 2px;
+}
+
+
+/* -----　事業所概要 ----- */
+
+body #company .company-flex {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+body #company table {
+  width: 50%;
+  max-width: 600px;
+  border-collapse: collapse;
+}
+
+body #company table tr th,
+body #company table tr td {
+  padding: 15px;
+  border: 1px dotted #DDCCA5;
+}
+
+body #company table tr th {
+  background-color: #FFEDC5;
+}
+
+body #company iframe {
+  width: 50%;
+  max-width: 600px;
+  min-height: 400px;
+}
+
+
+/* ------ お問い合わせ ----- */
+
+body #contact {
+  background-color: #FFEDC5;
+}
+
+body #contact .contact-btn {
+  display: flex;
+  justify-content: center;
+  /* 隙間を詰めて中央に */
+  gap: 30px;
+  /* ボタン同士の間に余白を作る */
+  margin-top: 40px;
+}
+
+body #contact .contact-btn .contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7AD02;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+body #contact .contact-btn .contact-link:hover {
+  opacity: 0.8;
+  transform: translateY(-5px);
+}
+
+body #contact .contact-btn .contact-link i {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+body #contact .contact-btn .contact-link span {
+  font-weight: bold;
+}
+
+
+
+/* ----- フッター ----- */
+/* ----- フッター全体 ----- */
+#footer {
+  background-color: #F9F9F9;
+  padding: 60px 0 30px;
+  border-top: 1px solid #eee;
+  color: #444;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px;
+}
+
+/* 左側：基本情報 */
+.footer-info {
+  max-width: 450px;
+}
+
+.footer-logo img {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.office-name {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.address,
+.contact-tel {
+  font-size: 16px;
+  line-height: 28px;
+  color: #666;
+}
+
+.footer-info a {
+  text-decoration: none;
+}
+
+/* 右側：ナビゲーション */
+.footer-nav {
+  max-width: 400px;
+  margin-top: 30px;
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px 40px;
+  list-style: none;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: #F7AD02;
+}
+
+/* コピーライト */
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #999;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+
+
+
+
+/* ====== 下層ページ ====== */
+
+/* ----- 会社概要 ----- */
+#aboutUs .rinen-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+#aboutUs .rinen-container .rinen-item {
+  width: 20%;
+  text-align: center;
+}
+
+#aboutUs .rinen-container .rinen-item img {
+  padding-bottom: 20px;
+}
+
+#aboutUs .logo-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#aboutUs .logo-txt {
+  padding: 30px 20px;
+  background-color: #FFF8EA;
+  border-radius: 30px;
+}
+
+#aboutUs .logo-flex h3 {
+  font-size: 25px;
+  padding: 20px 0 5px;
+  border-bottom: #F7AD02 solid 1px;
+}
+
+
+
+
+
+
+
+/* ---------サービスについて--------- */
+#aboutService .service-btn {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-bottom: 20px;
+}
+
+#aboutService .service-btn p {
+  max-width: 300px;
+  width: 100%;
+  line-height: 70px;
+  background-color: #F7AD02;
+  text-align: center;
+  border-radius: 60px;
+}
+
+#aboutService .service-btn p a {
+  display: block;
+  width: 100%;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+#aboutService .service-btn p a:hover {
+  opacity: 0.6;
+}
+
+/* お仕事について */
+#aboutService #works-container .works {
+  margin-top: 50px;
+}
+
+#aboutService #works-container .works-item {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#aboutService #works-container .works-item img {
+  width: 30%;
+  height: auto;
+  border-radius: 20px;
+}
+
+#aboutService #works-container .works-item .txt-frame {
+  width: 50%;
+  height: auto;
+}
+
+#aboutService #works-container .works-item .works-txt2 {
+  padding: 15px 5px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #FFEDC5;
+}
+
+#aboutService #works-container .txt-frame h3 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #F7AD02;
+  margin-bottom: 10px;
+}
+
+
+/* 一日の流れ */
+#oneDay .oneDay-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#oneDay .oneDay-container .oneDay-item {
+  max-width: 600px;
+  width: 70%;
+  margin: 0 auto 30px;
+}
+
+#oneDay .oneDay-container .oneDay-item ol li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #666;
+  padding: 30px 0;
+}
+
+#oneDay .oneDay-container .oneDay-item ol li .time {
+  font-size: 160%;
+  color: #F7AD02;
+  font-weight: bold;
+  padding-right: 30px;
+}
+
+#oneDay .oneDay-container .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#oneDay .oneDay-container .check div {
+  content: '';
+  width: 20px;
+  height: 5px;
+  margin-right: 5px;
+  border-left: 2px solid #25AF01;
+  border-bottom: 2px solid #25AF01;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+/* よくある質問 */
+#faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#faq-container .faq-item {
+  border-bottom: 1px solid #F7AD02;
+  overflow: hidden;
+}
+
+#faq-container .faq-question {
+  display: block;
+  padding: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  list-style: none;
+}
+
+#faq-container .faq-question::-webkit-details-marker {
+  display: none;
+}
+
+#faq-container .faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  transition: transform 0.1s;
+}
+
+/* プラスアイコンを回転 */
+.faq-item[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+#faq-container .faq-answer {
+  padding: 0 20px 20px;
+  color: #666;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* ---------- ギャラリー ---------- */
+
+.gallery-container {
+  display: grid;
+  /* PCでは3列、タブレットでは2列、スマホでは1列に自動調整 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  /* 高さを統一して揃える */
+  object-fit: cover;
+  /* 画像を歪ませずに切り抜く */
+  vertical-align: bottom;
+}
+
+.gallery-caption {
+  padding: 15px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #FFF8EA;
+  /* 薄いベージュ */
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #F7AD02;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.pagination li a.active,
+.pagination li a:hover {
+  background-color: #F7AD02;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===============レスポンシブ（タブレット）============ */
+@media (max-width: 768px) {
+
+    body #header h1 img {
+      width: 50px;
+    }
+
+  /* =====共通===== */
+  body section {
+    padding: 50px 5px;
+  }
+  body #main-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+  body section p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  body h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  body h3 {
+    font-size: 20px;
+  }
+
+  body #header h1 img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  body header #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* 画面の右外に隠す */
+    height: 100vh;
+    transition: all 0.6s ease;
+  }
+
+  /* JSでactiveクラスがついたら画面内にスライドイン */
+  header nav.active {
+    right: 0;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .openbtn {
+    position: relative;
+    background: #F7AD02;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  /*ボタン内側*/
+  .openbtn span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    width: 45%;
+  }
+
+  .openbtn span:nth-of-type(1) {
+    top: 15px;
+  }
+
+  .openbtn span:nth-of-type(2) {
+    top: 23px;
+  }
+
+  .openbtn span:nth-of-type(3) {
+    top: 31px;
+  }
+
+  .openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  .openbtn.active span:nth-of-type(2) {
+    opacity: 0;
+    /*真ん中の線は透過*/
+  }
+
+  .openbtn.active span:nth-of-type(3) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+
+
+  /* ------ふくらしゃについて------ */
+  body main #about .about-hukurasha {
+    flex-direction: column;
+  }
+
+  body main #about .about-hukurasha img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+  }
+
+  body main #about .company-txt {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* トップ>事業所概要 */
+  body #company .company-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body #company table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body #company iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  /* ----ご利用の流れ----- */
+
+  /* お問い合わせ */
+  body #contact .contact-btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  body #contact .contact-btn .contact-link {
+    max-width: 100%;
+    padding: 20px;
+    flex-direction: row;
+    /* アイコンと文字を横並びに（お好みで） */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  body #contact .contact-btn .contact-link i {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  /* フッター */
+  #footer {
+  padding: 20px 0 10px;
+}
+
+  .footer-inner {
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .footer-info {
+    max-width: 100%;
+  }
+
+  .footer-nav {
+    margin-top: 30px;
+  }
+
+  .footer-nav ul {
+    display: block;
+  }
+
+  .footer-nav ul li {
+    margin-bottom: 15px;
+  }
+  .footer-logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+
+
+  /* =====下層ページ===== */
+
+  /* -----事業所概要----- */
+  #aboutUs .rinen-container .rinen-item {
+    width: 45%;
+    margin-bottom: 30px;
+  }
+
+  #aboutUs .logo-flex {
+    flex-direction: column;
+  }
+
+  #aboutUs .logo-txt {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* -----サービス内容----- */
+  #aboutService #works-container .works-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #aboutService #works-container .works-item img,
+  #aboutService #works-container .works-item .txt-frame {
+    width: 100%;
+  }
+
+  #oneDay .oneDay-container .oneDay-item {
+    width: 100%;
+  }
+
+  #aboutService .service-btn {
+    flex-direction: column;
+    /* 縦並びに変更 */
+    align-items: center;
+    /* 中央寄せ */
+    gap: 15px;
+    /* ボタン同士の間隔 */
+    padding: 20px 0;
+  }
+
+  #aboutService .service-btn p {
+    max-width: 100%;
+    /* 横幅いっぱいまで広がるように */
+    width: 90%;
+    /* 画面端に少し余白を作る */
+  }
+
+
+  /* ======ギャラリー===== */
+  /* ギャラリーコンテナの調整 */
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px; 
+    padding: 0 15px;
+    margin: 30px auto;
+  }
+
+  .gallery-item img {
+    height: 150px; 
+  }
+
+  .gallery-caption {
+    font-size: 14px; 
+    padding: 10px 5px;
+    min-height: 3em; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pagination {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .pagination li a {
+    padding: 10px 15px; 
+    font-size: 14px;
+  }
+
+}
+
+
+
+
+
+
+
+/* ================レスポンシブ（SP）================= */
+@media (max-width: 480px) {
+    body section {
+    padding: 30px 5px;
+  }
+
+  body section p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  body h2 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  body h3 {
+    font-size: 20px;
+  }
+
+
+  /* =====ギャラリー===== */
+  .gallery-container {
+    grid-template-columns: 1fr 1fr; /* 強制的に2列を維持 */
+    gap: 10px;
+  }
+
+}
