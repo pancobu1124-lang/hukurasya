@@ -30,16 +30,18 @@
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
       </nav>
-    <!-- ハンバーガー -->
-    <div class="openbtn"><span></span><span></span><span></span></div>
+      <!-- ハンバーガー -->
+      <div class="openbtn"><span></span><span></span><span></span></div>
     </div>
-
-
   </header>
 
+<!-- スライドショー -->
+  <ul class="slider">
+    <li class="slider-item slider-item01"></li>
+    <li class="slider-item slider-item02"></li>
+    <li class="slider-item slider-item03"></li>
+  </ul>
 
-  <!-- トップページスライド配置するならここへ -->
-  <div class="top-slide"></div>
 
   <main id="main-container">
     <section id="about">
@@ -68,35 +70,36 @@
         国頭村の豊かな自然を活かした養蜂や、伝統を繋ぐアダン工芸など、ふくらしゃならではの多様なお仕事を紹介します。<br>
         一人ひとりの個性や体調に寄り添いながら、働く喜びと自立に向けた確かな一歩をサポートします。
       </p>
-      <div class="works-container"> <div class="work-card">
-      <a href="service.html#works1">
-        <img src="images/works-1.jpg" alt="蜂蜜・養蜂関連の作業">
-        <h3>蜂蜜・養蜂関連の作業</h3>
-        <p>国頭村の豊かな自然の中でミツバチを育て、蜂蜜の瓶詰めを行います。</p>
-      </a>
-    </div>
-    <div class="work-card">
-      <a href="service.html#works2">
-        <img src="images/works-2.jpg" alt="地域連携・請負作業">
-        <h3>地域連携型の作業</h3>
-        <p>地元企業から依頼された軽作業やパッキングを行います。</p>
-      </a>
-    </div>
-    <div class="work-card">
-      <a href="service.html#works3">
-        <img src="images/works-3.jpg" alt="アダンを使った手工芸">
-        <h3>アダンを使った手工芸</h3>
-        <p>沖縄の伝統的な植物「アダン」の葉を使い、工芸品を制作します。</p>
-      </a>
-    </div>
-    <div class="work-card">
-      <a href="service.html#works4">
-        <img src="images/works-4.jpg" alt="訪問看護ステーション">
-        <h3>訪問看護ステーション</h3>
-        <p>提携する訪問看護ステーションの事務補助や環境整備を行います。</p>
-      </a>
-    </div>
-  </div>
+      <div class="works-container">
+        <div class="work-card">
+          <a href="service.html#works1">
+            <img src="images/works-1.jpg" alt="蜂蜜・養蜂関連の作業">
+            <h3>蜂蜜・養蜂関連の作業</h3>
+            <p>国頭村の豊かな自然の中でミツバチを育て、蜂蜜の瓶詰めを行います。</p>
+          </a>
+        </div>
+        <div class="work-card">
+          <a href="service.html#works2">
+            <img src="images/works-2.jpg" alt="地域連携・請負作業">
+            <h3>地域連携型の作業</h3>
+            <p>地元企業から依頼された軽作業やパッキングを行います。</p>
+          </a>
+        </div>
+        <div class="work-card">
+          <a href="service.html#works3">
+            <img src="images/works-3.jpg" alt="アダンを使った手工芸">
+            <h3>アダンを使った手工芸</h3>
+            <p>沖縄の伝統的な植物「アダン」の葉を使い、工芸品を制作します。</p>
+          </a>
+        </div>
+        <div class="work-card">
+          <a href="service.html#works4">
+            <img src="images/works-4.jpg" alt="訪問看護ステーション">
+            <h3>訪問看護ステーション</h3>
+            <p>提携する訪問看護ステーションの事務補助や環境整備を行います。</p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section id="flow">
@@ -237,7 +240,7 @@
           <a href="index.html"><img src="images/hukurasha_logo.jpg" alt="ふくらしゃ"></a>
         </div>
         <p class="office-name">就労継続支援B型事業所ふくらしゃ</p>
-        <p class="address">〒905-1411 沖縄県国頭郡国頭村辺土名○○○</p>
+        <p class="address">〒905-1411 沖縄県国頭郡国頭村辺土名315番地1</p>
         <a href="tel:0980436823">
           <p class="contact-tel">TEL: 0980-43-6823</p>
         </a>
@@ -257,9 +260,11 @@
     <p class="footer-copy">&copy; 2026 就労継続支援B型事業所ふくらしゃ</p>
   </footer>
   <script src="https://kit.fontawesome.com/70a62f30b0.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!--自作のJS-->
-<script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!--自作のJS-->
+  <script src="js/script.js"></script>
 
 </body>
 
