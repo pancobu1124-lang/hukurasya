@@ -29,13 +29,6 @@ body .title-img img {
   object-fit: cover;
 }
 
-/* タイトルの文字が動くアニメーション */
-.eachTextAnime span{opacity: 0;}
-.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
-@keyframes text_anime_on {
-	0% {opacity:0;}
-	100% {opacity:1;}
-}
 
 body section {
   padding: 80px 20px;
@@ -99,7 +92,7 @@ body .btn-center {
 #header {
   height: 150px;
   width: 100%;
-    background-color: #F9F9F9;
+  background-color: #F9F9F9;
 
 }
 
@@ -149,6 +142,7 @@ header nav ul li a:hover {
 
 /* -----トップ＞スライダー----- */
 .slider {
+  z-index: 1;
   position: relative;
   height: 100vh;
 }
@@ -174,63 +168,19 @@ header nav ul li a:hover {
   background-size: cover;
 }
 
-/*矢印の設定*/
-.slick-prev,
-.slick-next {
-  position: absolute;
-  z-index: 3;
-  top: 42%;
-  cursor: pointer;
-  outline: none;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-  height: 25px;
-  width: 25px;
-}
 
 .slick-prev {
-  /*戻る矢印の位置と形状*/
-  left: 2.5%;
-  transform: rotate(-135deg);
+  display: none;
 }
 
 .slick-next {
-  /*次へ矢印の位置と形状*/
-  right: 2.5%;
-  transform: rotate(45deg);
+  display: none;
 }
 
 /*ドットナビゲーションの設定*/
 .slick-dots {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  margin: -50px 0 0 0;
-  /*ドットの位置*/
+  display: none;
 }
-
-.slick-dots li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.slick-dots button {
-  color: transparent;
-  outline: none;
-  width: 8px;
-  /*ドットボタンのサイズ*/
-  height: 8px;
-  /*ドットボタンのサイズ*/
-  display: block;
-  border-radius: 50%;
-  background: #fff;
-  /*ドットボタンの色*/
-}
-
-.slick-dots .slick-active button {
-  background: #333;
-}
-
 
 
 
@@ -321,7 +271,7 @@ body #flow {
   background-color: rgba(255, 237, 197, 0.3);
 }
 
-body #flow ol img{
+body #flow ol img {
   width: 80%;
   height: auto;
 }
@@ -335,6 +285,7 @@ body #flow ol li {
 body #flow .flow-txt {
   width: 90%;
   padding-right: 10px;
+  line-height: 25px;
 }
 
 body #flow .flow-txt h3 {
@@ -777,7 +728,7 @@ body #contact .contact-btn .contact-link span {
 
 /* ページネーション */
 .pagination {
-  display: flex;
+  display: none;
   justify-content: center;
   list-style: none;
   gap: 15px;
@@ -813,19 +764,24 @@ body #contact .contact-btn .contact-link span {
 /* ===============レスポンシブ（タブレット）============ */
 @media (max-width: 768px) {
 
+  body {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
   #header {
-  height: 80px;
-  width: 100%;
-}
+    height: 80px;
+    width: 100%;
+  }
 
   body #header h1 img {
     width: 80px;
   }
 
-body #main-container {
-  padding-left: 2%;
-  padding-right: 2%;
-}
+  body #main-container {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 
   /* =====共通===== */
   body section {
@@ -977,17 +933,33 @@ body #main-container {
 
   body #company iframe {
     width: 100%;
-    max-width: 100%;
     height: 300px;
   }
+
+
+
+
 
   /* ----ご利用の流れ----- */
 
   body #flow .flow-txt span {
     font-size: 15px;
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
   }
+
+  body #flow .flow-txt {
+    line-height: 18px;
+  }
+
+  body #flow .flow-txt h3 {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+
+
+
 
 
   /* -----事業所概要------ */
@@ -995,6 +967,8 @@ body #main-container {
   body #company table tr td {
     font-size: 15px;
   }
+
+
 
 
 
@@ -1019,30 +993,20 @@ body #main-container {
     margin-bottom: 0;
   }
 
-  /* フッター */
+  /* ----フッター----- */
   #footer {
-    padding: 20px 0 10px;
+    padding: 10px;
   }
 
   .footer-inner {
+    max-width: 738px;
     justify-content: space-around;
     padding: 0;
   }
 
+  /* 左側：基本情報 */
   .footer-info {
-    max-width: 100%;
-  }
-
-  .footer-nav {
-    margin-top: 30px;
-  }
-
-  .footer-nav ul {
-    display: block;
-  }
-
-  .footer-nav ul li {
-    margin-bottom: 15px;
+    max-width: 80%;
   }
 
   .footer-logo img {
@@ -1051,20 +1015,60 @@ body #main-container {
     margin-bottom: 5px;
   }
 
+  .office-name {
+    margin-bottom: 5px;
+  }
+
+  .address,
+  .contact-tel {
+    font-size: 12px;
+    line-height: 23px;
+  }
+
+  .footer-info a {
+    font-size: 12px;
+  }
+
+  /* 右側：ナビゲーション */
+  .footer-nav {
+    max-width: 400px;
+    margin-top: 30px;
+  }
+
+  .footer-nav ul {
+    display: block;
+  }
+
   .footer-nav a {
     font-size: 12px;
   }
+
+
+
+
+
+
+
 
   /* =====下層ページ===== */
 
   /* -----事業所概要----- */
   #aboutUs .rinen-container .rinen-item {
+    font-size: 13px;
     width: 45%;
     margin-bottom: 30px;
   }
 
+  #aboutUs .rinen-container .rinen-item img {
+    width: 30%;
+  }
+
   #aboutUs .logo-flex {
     flex-direction: column;
+  }
+
+  #aboutUs .logo-flex img{
+    width: 50%;
   }
 
   #aboutUs .logo-txt {
@@ -1080,7 +1084,8 @@ body #main-container {
 
   #aboutService #works-container .works-item img,
   #aboutService #works-container .works-item .txt-frame {
-    width: 100%;
+    width: 70%;
+    height: auto;
   }
 
   #oneDay .oneDay-container .oneDay-item {
@@ -1088,20 +1093,16 @@ body #main-container {
   }
 
   #aboutService .service-btn {
+
     flex-direction: column;
-    /* 縦並びに変更 */
     align-items: center;
-    /* 中央寄せ */
     gap: 15px;
-    /* ボタン同士の間隔 */
     padding: 20px 0;
   }
 
   #aboutService .service-btn p {
     max-width: 100%;
-    /* 横幅いっぱいまで広がるように */
     width: 90%;
-    /* 画面端に少し余白を作る */
   }
 
 
@@ -1167,8 +1168,10 @@ body #main-container {
 
   /* スライドショー全体の高さをスマホ用に固定する */
   .slider li {
-    height: 60vh; /* 画面の高さの60%にする（お好みで調整してください） */
-    object-fit: cover; /* 画像を切り抜いて枠いっぱいに表示する（重要！） */
+    height: 60vh;
+    /* 画面の高さの60%にする（お好みで調整してください） */
+    object-fit: cover;
+    /* 画像を切り抜いて枠いっぱいに表示する（重要！） */
     width: 100%;
   }
 
