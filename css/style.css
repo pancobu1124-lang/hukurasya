@@ -29,9 +29,12 @@ body .title-img img {
   object-fit: cover;
 }
 
-body #main-container {
-  padding-left: 5%;
-  padding-right: 5%;
+/* タイトルの文字が動くアニメーション */
+.eachTextAnime span{opacity: 0;}
+.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
+@keyframes text_anime_on {
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
 
 body section {
@@ -95,27 +98,20 @@ body .btn-center {
 
 #header {
   height: 150px;
-  /*高さ指定*/
   width: 100%;
-  /*横幅指定*/
+    background-color: #F9F9F9;
+
 }
 
 /*JSを使いfixedクラスが付与された際の設定*/
 #header.fixed {
   position: fixed;
-  /*fixedを設定して固定*/
-  z-index: 999;
-  /*最前面へ*/
   top: 0;
-  /*位置指定*/
   left: 0;
-  /*位置指定*/
 }
-
 
 header nav {
   width: 100%;
-  background-color: #F9F9F9;
   justify-content: space-between;
 }
 
@@ -154,12 +150,12 @@ header nav ul li a:hover {
 /* -----トップ＞スライダー----- */
 .slider {
   position: relative;
-  z-index: 1;
   height: 100vh;
 }
 
+
 .slider-item01 {
-  background: url(../images/slide/slide2.jpg);
+  background: url(../images/slide/slide3.jpg);
 }
 
 .slider-item02 {
@@ -258,11 +254,8 @@ body main #about .about-hukurasha {
 
 body main #about .about-hukurasha img {
   width: 45%;
-  /* 親要素に対する比率 */
   height: auto;
-  /* 比率を維持 */
   object-fit: cover;
-  /* 万が一サイズが固定されても歪まないように */
   border-radius: 20px;
   flex-shrink: 0;
 }
@@ -305,7 +298,6 @@ body main #about .company-txt p {
 #service .work-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  /* ：画像の比率を4:3で統一してサイズを揃える */
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -327,7 +319,11 @@ body main #about .company-txt p {
 /* -----ご利用の流れ----- */
 body #flow {
   background-color: rgba(255, 237, 197, 0.3);
-  ;
+}
+
+body #flow ol img{
+  width: 80%;
+  height: auto;
 }
 
 body #flow ol li {
@@ -337,7 +333,8 @@ body #flow ol li {
 }
 
 body #flow .flow-txt {
-  width: 80%;
+  width: 90%;
+  padding-right: 10px;
 }
 
 body #flow .flow-txt h3 {
@@ -816,9 +813,19 @@ body #contact .contact-btn .contact-link span {
 /* ===============レスポンシブ（タブレット）============ */
 @media (max-width: 768px) {
 
+  #header {
+  height: 80px;
+  width: 100%;
+}
+
   body #header h1 img {
-    width: 50px;
+    width: 80px;
   }
+
+body #main-container {
+  padding-left: 2%;
+  padding-right: 2%;
+}
 
   /* =====共通===== */
   body section {
@@ -831,12 +838,12 @@ body #contact .contact-btn .contact-link span {
   }
 
   body section p {
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   body h2 {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
   }
 
@@ -845,15 +852,16 @@ body #contact .contact-btn .contact-link span {
   }
 
   body #header h1 img {
-    max-width: 150px;
+    max-width: 100px;
     height: auto;
+    display: block;
   }
 
   body header #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 0 10px;
   }
 
   header nav {
@@ -918,7 +926,6 @@ body #contact .contact-btn .contact-link span {
 
   .openbtn.active span:nth-of-type(2) {
     opacity: 0;
-    /*真ん中の線は透過*/
   }
 
   .openbtn.active span:nth-of-type(3) {
@@ -1045,7 +1052,7 @@ body #contact .contact-btn .contact-link span {
   }
 
   .footer-nav a {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   /* =====下層ページ===== */
@@ -1156,6 +1163,13 @@ body #contact .contact-btn .contact-link span {
 
   body h3 {
     font-size: 20px;
+  }
+
+  /* スライドショー全体の高さをスマホ用に固定する */
+  .slider li {
+    height: 60vh; /* 画面の高さの60%にする（お好みで調整してください） */
+    object-fit: cover; /* 画像を切り抜いて枠いっぱいに表示する（重要！） */
+    width: 100%;
   }
 
 
