@@ -105,6 +105,7 @@ body .btn-center {
 
 header nav {
   width: 100%;
+  z-index: 10;
 }
 
 header nav ul {
@@ -143,37 +144,61 @@ header nav ul li a:hover {
 
 /* スライダー全体の枠 */
 .css-slider {
-width: 100%;
-margin: 0 auto;
-overflow: hidden;/*枠からはみ出した画像を切る */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+  /*枠からはみ出した画像を切る */
 }
+
 /*画像を横に並べる中身 */
 .slider-inner {
-display: flex;
-width: 400%;/*画像数（実質3枚+ループ用1枚）× 100% */
-list-style: none;
-padding: 0;
-margin: 0;
-animation: slide-anim 19.5s infinite;/*合計時間：（5秒+1.5秒）×3枚 = 19.5秒 */
+  display: flex;
+  width: 400%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: slide-anim 9s infinite;
+  /*合計時間：（5秒+1.5秒）×3枚 = 19.5秒 */
 }
+
 .slider-inner li {
-width: 25%;/*100% ÷ 全画像数（ループ用含め4枚） */
+  width: 25%;
 }
+
 .slider-inner li img {
-width: 100%;
-height: auto;
-display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
+
 /*スライドの動きを指定（静止時間を作るための記述） */
 @keyframes slide-anim {
-0%, 25.64%   { transform: translateX(0); }       /*1枚目表示(5秒間) */
-33.33%, 58.97% { transform: translateX(-25%); }  /*2枚目へ移動(1.5秒) ＋ 表示(5秒間) */
-66.67%, 92.31% { transform: translateX(-50%); }  /*3枚目へ移動(1.5秒) ＋ 表示(5秒間) */
-100%           { transform: translateX(-75%); }  /*ループ用(1枚目と同じ)へ移動して終了 */
+
+  0%,
+  25.64% {
+    transform: translateX(0);
+  }
+
+  33.33%,
+  58.97% {
+    transform: translateX(-25%);
+  }
+
+  66.67%,
+  92.31% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(-75%);
+  }
+
 }
+
 /*マウスを乗せたときに止める設定 */
 .css-slider:hover .slider-inner {
-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 
@@ -821,6 +846,7 @@ body #contact .contact-btn .contact-link span {
     /* 画面の右外に隠す */
     height: 100vh;
     transition: all 0.6s ease;
+    background-color: #F7AD02;
   }
 
   /* JSでactiveクラスがついたら画面内にスライドイン */
@@ -840,6 +866,8 @@ body #contact .contact-btn .contact-link span {
     width: 50px;
     height: 50px;
     border-radius: 5px;
+    z-index: 10;
+
   }
 
   /*ボタン内側*/
