@@ -105,13 +105,13 @@ body .btn-center {
 
 header nav {
   width: 100%;
-  justify-content: space-between;
 }
 
 header nav ul {
   width: 50%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 header nav ul li {
@@ -139,47 +139,41 @@ header nav ul li a:hover {
 }
 
 
+/* ---スライダー--- */
 
-/* -----トップ＞スライダー----- */
-.slider {
-  z-index: 1;
-  position: relative;
-  height: 100vh;
+/* スライダー全体の枠 */
+.css-slider {
+width: 100%;
+margin: 0 auto;
+overflow: hidden;/*枠からはみ出した画像を切る */
 }
-
-
-.slider-item01 {
-  background: url(../images/slide/slide3.jpg);
+/*画像を横に並べる中身 */
+.slider-inner {
+display: flex;
+width: 400%;/*画像数（実質3枚+ループ用1枚）× 100% */
+list-style: none;
+padding: 0;
+margin: 0;
+animation: slide-anim 19.5s infinite;/*合計時間：（5秒+1.5秒）×3枚 = 19.5秒 */
 }
-
-.slider-item02 {
-  background: url(../images/slide/slide3.jpg);
+.slider-inner li {
+width: 25%;/*100% ÷ 全画像数（ループ用含め4枚） */
 }
-
-.slider-item03 {
-  background: url(../images/slide/slide4.jpg);
+.slider-inner li img {
+width: 100%;
+height: auto;
+display: block;
 }
-
-.slider-item {
-  width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+/*スライドの動きを指定（静止時間を作るための記述） */
+@keyframes slide-anim {
+0%, 25.64%   { transform: translateX(0); }       /*1枚目表示(5秒間) */
+33.33%, 58.97% { transform: translateX(-25%); }  /*2枚目へ移動(1.5秒) ＋ 表示(5秒間) */
+66.67%, 92.31% { transform: translateX(-50%); }  /*3枚目へ移動(1.5秒) ＋ 表示(5秒間) */
+100%           { transform: translateX(-75%); }  /*ループ用(1枚目と同じ)へ移動して終了 */
 }
-
-
-.slick-prev {
-  display: none;
-}
-
-.slick-next {
-  display: none;
-}
-
-/*ドットナビゲーションの設定*/
-.slick-dots {
-  display: none;
+/*マウスを乗せたときに止める設定 */
+.css-slider:hover .slider-inner {
+animation-play-state: paused;
 }
 
 
@@ -1067,7 +1061,7 @@ body #contact .contact-btn .contact-link span {
     flex-direction: column;
   }
 
-  #aboutUs .logo-flex img{
+  #aboutUs .logo-flex img {
     width: 50%;
   }
 
