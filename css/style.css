@@ -45,6 +45,13 @@ body section .section-intro {
 body h2 {
   font-size: 45px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px); /* 30px 下に下げておく */
+  transition: opacity 1s ease, transform 1s ease; /* 1秒かけてじわっと動かす */
+}
+body h2.show {
+  opacity: 2;
+  transform: translateY(0); /* 元の位置に戻る */
 }
 
 body h3 {
@@ -101,6 +108,7 @@ body .btn-center {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
 }
 
 header nav {
@@ -142,65 +150,43 @@ header nav ul li a:hover {
 
 /* ---スライダー--- */
 
-/* スライダー全体の枠 */
-.css-slider {
+/* スライド全体の枠（好きな高さに調整してください） */
+.custom-slider {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
+  height: 80vh; /* パソコン画面の高さ60%分 */
   overflow: hidden;
-  z-index: 1;
-  /*枠からはみ出した画像を切る */
 }
 
-/*画像を横に並べる中身 */
-.slider-inner {
-  display: flex;
-  width: 400%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  animation: slide-anim 9s infinite;
-  /*合計時間：（5秒+1.5秒）×3枚 = 19.5秒 */
-}
-
-.slider-inner li {
-  width: 25%;
-}
-
-.slider-inner li img {
+/* すべてのスライドを同じ位置に重ね合わせる */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  opacity: 0; 
+  transition: opacity 1s ease; 
+  z-index: 1;
 }
 
-/*スライドの動きを指定（静止時間を作るための記述） */
-@keyframes slide-anim {
-
-  0%,
-  25.64% {
-    transform: translateX(0);
-  }
-
-  33.33%,
-  58.97% {
-    transform: translateX(-25%);
-  }
-
-  66.67%,
-  92.31% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(-75%);
-  }
-
+.slide.active {
+  opacity: 1;
+  z-index: 2;
 }
 
-/*マウスを乗せたときに止める設定 */
-.css-slider:hover .slider-inner {
-  animation-play-state: paused;
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* スマホ用の高さ調整 */
+@media (max-width: 480px) {
+  .custom-slider {
+    height: 60vh;
+  }
+}
 
 
 
@@ -253,10 +239,39 @@ body main #about .company-txt p {
   padding: 0 10px;
 }
 
-#service .work-card {
-  padding: 20px;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
+#service .work-card,
+.gallery-container .gallery-item {
+  opacity: 0;
+  transform: translateY(40px); /* 40px 下に下げておく */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 画面内に入って「show」クラスがついた時の状態 */
+#service .work-card.show,
+.gallery-container .gallery-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================
+   左から右へ「ポン、ポン、ポン」とずらす魔法
+=================================================== */
+/* 1番目の要素（左）: すぐに動き出す */
+#service .work-card:nth-child(3n+1),
+.gallery-container .gallery-item:nth-child(3n+1) {
+  transition-delay: 0s;
+}
+
+/* 2番目の要素（真ん中）: 0.2秒遅らせる */
+#service .work-card:nth-child(3n+2),
+.gallery-container .gallery-item:nth-child(3n+2) {
+  transition-delay: 0.4s;
+}
+
+/* 3番目の要素（右）: 0.4秒遅らせる */
+#service .work-card:nth-child(3n),
+.gallery-container .gallery-item:nth-child(3n) {
+  transition-delay: 0.6s;
 }
 
 #service .work-card a {
@@ -269,12 +284,12 @@ body main #about .company-txt p {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin: 40px 0 10px 0;
 }
 
 #service .work-card h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
+  font-size: 25px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -296,6 +311,7 @@ body #flow ol img {
 }
 
 body #flow ol li {
+  margin: auto 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -304,11 +320,12 @@ body #flow ol li {
 body #flow .flow-txt {
   width: 90%;
   padding-right: 10px;
+  padding: 20px 0;
   line-height: 25px;
 }
 
 body #flow .flow-txt h3 {
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 body #flow .flow-txt span {
@@ -747,7 +764,7 @@ body #contact .contact-btn .contact-link span {
 
 /* ページネーション */
 .pagination {
-  display: none;
+  display: flex;
   justify-content: center;
   list-style: none;
   gap: 15px;
